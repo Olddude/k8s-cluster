@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: angular-webclient
+  name: k8s-angular
 spec:
   selector:
     matchLabels:
-      app: angular-webclient
+      app: k8s-angular
   template:
     metadata:
       labels:
-        app: angular-webclient
+        app: k8s-angular
     spec:
       containers:
-      - name: angular-webclient
-        image: <Image>
+      - name: k8s-angular
+        image: k8s-angular
+        imagePullPolicy: IfNotPresent
         resources:
           limits:
             memory: "128Mi"
