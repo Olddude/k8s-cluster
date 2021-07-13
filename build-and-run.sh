@@ -4,4 +4,5 @@ minikube delete
 
 minikube start
 
-minikube
+eval $(minikube -p minikube docker-env)
+

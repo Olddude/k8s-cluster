@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-webclient
+spec:
+  selector:
+    matchLabels:
+      app: angular-webclient
+  template:
+    metadata:
+      labels:
+        app: angular-webclient
+    spec:
+      containers:
+      - name: angular-webclient
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
