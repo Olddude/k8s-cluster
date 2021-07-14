@@ -3,10 +3,8 @@ kind: Service
 metadata:
   name: k8s-angular
 spec:
-  type: NodePort
   selector:
     app: k8s-angular
   ports:
   - port: 8080
     targetPort: 80
-    nodePort: 30001
