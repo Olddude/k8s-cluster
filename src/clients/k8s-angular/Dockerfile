@@ -1,6 +1,7 @@
-FROM node as build
+FROM node:14-alpine as build
 WORKDIR /app
 COPY ./package*.json /app/
+RUN npm config set registry http://registry.npmjs.org/
 RUN npm install
 COPY . .
 RUN npm run build -- --configuration production
